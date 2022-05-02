@@ -48,14 +48,14 @@ type Edit string
 func (v View) handle() {
 	fmt.Println("view")
 	http.HandleFunc("/view", viewHandler)
-	s := http.ListenAndServe(":808", nil)
+	s := http.ListenAndServe(":8080", nil)
 	fmt.Println(s)
 }
 
 func (e Edit) handle() {
 	fmt.Println("edit")
 	http.HandleFunc("/edit", editHandler)
-	log.Fatal(http.ListenAndServe(":808", nil))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func (h Handler) HandleClientRequest(request Request) {
